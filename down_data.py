@@ -11,6 +11,14 @@ The second time you open the app, you can load the data locally instead of downl
 
 # Accepts a data_list parameter. And keep the data of the downloaded web page to the data_list.
 def get_house_data(data_list):
+    ''' completes scraping data from the webpage, and when the data is successfully downloaded, it will be saved locally
+    ----------
+    Returns
+    -------
+    data_list: list
+        A list contains apartment information     
+           
+    ''' 
     start_len = len(data_list) 
     print(data_list, start_len) # Prints the contents of the list and the length of the list.
     browse = webdriver.Chrome() # Create a browser object.
