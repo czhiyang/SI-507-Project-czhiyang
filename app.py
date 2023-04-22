@@ -118,7 +118,7 @@ def details(id):
     fig = plt.figure()
     ax = fig.add_subplot(1, 1, 1)
     df.plot(ax=ax)
-    plt.xticks(range(0, 100, 10), df['title'].str[:20], rotation=15)
+    plt.xticks(range(0, len(df['title'])*10, 10), df['title'], rotation=15)
     plt.axhline(max_,linestyle='-.',color='r')  #red dash line indicating the max price of this specific search result
     plt.axhline(min_,linestyle='-.',color='r')
     # save the plot in PNG format and convert it into Base64 string
