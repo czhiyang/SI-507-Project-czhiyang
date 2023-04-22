@@ -10,7 +10,6 @@ Special instructions:
     1.To successfully run the function of data crawling and scraping a chromedriver needs to be added into both  python and proejct file.
     Please download the drive according to the chrome version you are currently using:
     https://registry.npmmirror.com/binary.html?path=chromedriver/
-
     2.To see the constructed tree in picture, a software graphviz is needed to be installed.
     Please visit the website below to download:
     https://graphviz.org/download/
