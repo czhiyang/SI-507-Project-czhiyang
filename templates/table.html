@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Apartments</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            margin: 0;
+        }
+        h1 {
+            background-color: #0074D9;
+            color: white;
+            padding: 20px;
+            margin-top: 0;
+        }
+        table {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #f9f9f9;
+            color: #444;
+        }
+
+        th, td {
+            text-align: center;
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #0099cc;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd;
+        }
+
+        @media screen and (max-width: 600px) {
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 4px;
+            }
+        }
+
+        button {
+            background-color: #0074D9;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 12px;
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+    </style>
+</head>
+<body>
+<h1>Apartments</h1>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Pricing</th>
+        <th>floor plan</th>
+    </tr>
+    {% for i, row in df.iterrows() %}
+        <tr>
+            <td><a href="{{ url_for('details', id=row['title']) }}">{{ row['title'] }}</a></td>
+
+            <td>{{ row['pricing']|safe }}</td>
+            <td>{{ row['beds'] }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<button onclick="goBack()">Go Back</button>
+    <script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+
+</body>
+</html>
